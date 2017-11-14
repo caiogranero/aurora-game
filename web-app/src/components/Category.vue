@@ -1,6 +1,6 @@
 <template>
   <div class="dice">
-	<b>{{name}}</b>[{{condition}}]: <u>{{rule}}</u>
+	<b>{{name}}</b>[{{description}}]: <u>{{rule}}</u>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
 
   props: {
     name: String,
-    condition: String,
+    description: String,
     rule: String
   }
 }

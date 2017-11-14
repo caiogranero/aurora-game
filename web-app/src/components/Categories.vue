@@ -3,7 +3,7 @@
 	<category
 		v-for="category in categories"
 		:name="category.name"
-		:condition="category.condition"
+		:description="category.description"
 		:rule="category.rule"
 		:key="category._id"
 	></category>

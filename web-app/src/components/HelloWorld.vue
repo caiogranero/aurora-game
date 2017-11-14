@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <categories></categories>
+    <input type="button" @click="$store.commit('clearDice')" value="limpar">
     <dice></dice>
   </div>
 </template>
