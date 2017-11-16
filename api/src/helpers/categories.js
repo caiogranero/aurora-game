@@ -45,15 +45,6 @@ const categories = [
     _id: 5
   },
   {
-    name: 'Seis',
-    description: 'Haver pelo menos 1 dado com valor "seis" no rolamento',
-    rule: 'Pontue a soma de todos os dados de valor "seis"',
-    condition: 'seis',
-    atLeast: 1,
-    points: 'sum',
-    _id: 6
-  },
-  {
     name: 'Par',
     description: 'Haver pelo menos 2 dados de mesmo valor no rolamento',
     rule: 'Pontue a soma dos dois dados de mesmo valor',
@@ -129,4 +120,4 @@ const categories = [
   }
 ]
 
-export default categories
+module.exports = categories

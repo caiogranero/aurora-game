@@ -1,5 +1,7 @@
 const state = {
-  dices: []
+  dices: [],
+  results: [],
+  selectedCategory: []
 }
 
 export default state
