@@ -66,7 +66,7 @@ export default {
       })
       this.$store.commit('categories', categories)
     }, error => {
-      flash('Erro ao obter categorias disponíveis', 'error')
+      window.flash(`Erro ao obter categorias disponíveis - ${error.toString()}`, 'error')
     })
   }
 }

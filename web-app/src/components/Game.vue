@@ -28,7 +28,7 @@ export default {
     results () {
       return this.$store.state.results
     }
-  },
+  }
 }
 </script>
 

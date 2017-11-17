@@ -12,7 +12,7 @@ const mutations = {
 
   // Clean all keys variables, sabe as restart the game
   clearDice (state) {
-    flash('Jogo reiniciado', 'info')
+    window.flash('Jogo reiniciado', 'info')
     state.dices = []
     state.results = []
     state.selectedCategory = {}

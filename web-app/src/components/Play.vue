@@ -38,7 +38,7 @@ export default {
       if (this.dices.length < 5 && this.selectedCategory && (Object.keys(this.selectedCategory).length > 0)) {
         this.$store.commit('throwDice')
       } else {
-        flash('Necessário selecionar uma categoria', 'warning')
+        window.flash('Necessário selecionar uma categoria', 'warning')
       }
     },
 
@@ -47,7 +47,7 @@ export default {
       this.$GameService.game({dices: this.dices}).then(response => {
         this.$store.commit('results', response.data.results)
       }, error => {
-        flash('Erro ao obter resultados da partida', 'error')
+        window.flash(`Erro ao obter resultados da partida ${error.toString()}`, 'error')
       })
     }
   }
