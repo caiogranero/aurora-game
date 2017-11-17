@@ -1,9 +1,9 @@
 <template>
   <div id="results">
-    <h2>Resultados</h2>
-    <div id="results-list">
-      <p v-for="result in results"> {{result}}</p>
-    </div>
+    <h4><u>Resultados</u></h4>
+    <p id="total-points"><u>Você pontuou</u> <strong>{{userPoints.totalPoints}} pontos</strong> na categoria <strong>{{userPoints.category}}</strong></p>
+    <p id="total-points">A <u>pontuação máxima</u> foi de <strong>{{maxPoints.totalPoints}} pontos</strong> na categoria <strong>{{maxPoints.category}}</strong></p>
+    <p id="total-points"> A <u>pontuação mínima</u> foi de <strong>{{minPoints.totalPoints}} pontos</strong> na categoria <strong>{{minPoints.category}}</strong></p>
   </div>
 </template>
 
@@ -14,6 +14,18 @@ export default {
   computed: {
     results () {
       return this.$store.state.results
+    },
+
+    maxPoints () {
+      return this.$store.state.maxPoints
+    },
+
+    minPoints () {
+      return this.$store.state.minPoints
+    },
+
+    userPoints () {
+      return this.$store.state.userPoints
     }
   }
 }
@@ -35,5 +47,18 @@ export default {
   border-radius: 2px;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
   overflow: hidden;
+}
+
+#total-points {
+  color: #525559;
+  font-weight: 400;
+  font-size: 1.0em;
+  line-height: 1.09524;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#result {
+  display: inline-flex;
 }
 </style>

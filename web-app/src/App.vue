@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <flash :timeout="3000"></flash>
     <div class="menu">
       <div class="name">Aurora</div>
       <div class="reset" @click="$store.commit('clearDice')">
@@ -11,10 +12,12 @@
 </template>
 
 <script>
-// import Icon from 'vue-awesome/components/Icon'
+import flash from 'vue-flash'
 
 export default {
-  name: 'app'
+  name: 'app',
+
+  components: { flash }
 }
 </script>
 
@@ -68,5 +71,45 @@ h2 {
   line-height: 1.09524;
   margin-top: 0;
   margin-bottom: 20px;
+}
+
+h4 {
+  color: #525559;
+  font-weight: 700;
+  font-size: 1.0em;
+  line-height: 1.09524;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 </style>

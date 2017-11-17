@@ -17,6 +17,10 @@ export default {
   computed: {
     dices () {
       return this.$store.state.dices
+    },
+
+    selectedCategory () {
+      return this.$store.state.selectedCategory
     }
   },
 
@@ -30,16 +34,20 @@ export default {
 
   methods: {
     start () {
-      if (this.dices.length < 5) {
+      // Only throw a dice if there are minor than five played and a category were selected
+      if (this.dices.length < 5 && this.selectedCategory && (Object.keys(this.selectedCategory).length > 0)) {
         this.$store.commit('throwDice')
+      } else {
+        flash('Necessário selecionar uma categoria', 'warning')
       }
     },
 
     calculate () {
+      // Make a request to calculate all possible results based on throwed dices
       this.$GameService.game({dices: this.dices}).then(response => {
         this.$store.commit('results', response.data.results)
       }, error => {
-        console.log(error)
+        flash('Erro ao obter resultados da partida', 'error')
       })
     }
   }

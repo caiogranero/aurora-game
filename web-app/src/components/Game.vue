@@ -2,6 +2,7 @@
   <div id="game">
     <categories></categories>
     <dice></dice>
+    <hr v-if="results.length > 0">
     <results v-if="results.length > 0"></results>
     <play v-if="dicesLength <= 5"></play>
     <restart v-if="dicesLength === 5"></restart>
@@ -27,7 +28,7 @@ export default {
     results () {
       return this.$store.state.results
     }
-  }
+  },
 }
 </script>
 

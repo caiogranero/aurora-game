@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const sanitize = require('./dices')
+const sanitize = require('./sanitize')
 
 module.exports = {
   /** Check if there are min 2 pairs of dices with same values
@@ -35,7 +35,7 @@ module.exports = {
         const totalPoints = el * sanitize.descToValue(key)
         response.push({
           points: totalPoints,
-          category: key
+          category: sanitize.diceToCategory(key)
         })
       }
     }))

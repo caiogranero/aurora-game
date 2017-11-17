@@ -13,6 +13,8 @@ module.exports = {
         return 'quatro'
       case 5:
         return 'cinco'
+      case 6:
+        return 'seis'
     }
   },
 
@@ -30,6 +32,25 @@ module.exports = {
         return 4
       case 'cinco':
         return 5
+      case 'seis':
+        return 6
+    }
+  },
+
+  diceToCategory (value) {
+    switch (value) {
+      case 'um':
+        return 'Uns'
+      case 'dois':
+        return 'Dois'
+      case 'três':
+        return 'Três'
+      case 'quatro':
+        return 'Quatros'
+      case 'cinco':
+        return 'Cincos'
+      case 'seis':
+        return 'Seis'
     }
   }
 }
