@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser')
 const express = require('express')
 const helmet = require('helmet')
 const app = express()
+const path = require('path')
+const __static = path.join(__dirname, '/../static/')
 
 app.use(
   cookieParser(),
@@ -11,6 +13,8 @@ app.use(
   bodyParser.json(),
   bodyParser.urlencoded({ extended: true })
 )
+
+app.use('/', express.static(__static))
 
 let routes = './routes'
 
