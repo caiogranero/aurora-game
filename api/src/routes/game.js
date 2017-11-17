@@ -54,10 +54,10 @@ module.exports = app => {
 
       // Check if is able and
       // calculate the total points for the "Full House" category
-      if (doisPares > 0 && trio > 0) {
+      if (par > 0 && trio > 0) {
         results.push({
-          totalPoints: trio + doisPares,
-          category: 'FullHouse'
+          totalPoints: trio + par,
+          category: 'Full House'
         })
       }
 

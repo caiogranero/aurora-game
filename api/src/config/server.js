@@ -14,6 +14,12 @@ app.use(
 
 let routes = './routes'
 
+// to consign, routes path change when run the test from main folder.
+// This happens just in test enviroment
+if (process.env.NODE_ENV === 'test') {
+  routes = './src/routes'
+}
+
 consign()
     .include(routes)
     .into(app)

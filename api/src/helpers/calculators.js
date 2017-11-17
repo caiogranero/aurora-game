@@ -49,13 +49,11 @@ module.exports = {
    * @return {Boolean} if at least `minOrdered` elements are in ordered, than true, else false
    */
   isOrdered (dices, minOrdered) {
-    let isOrdered = false
     let count = 0
 
-    isOrdered = _.every(dices, ((value, index, array) => {
-      let x = (index === 0 || array[index - 1] < value)
+    _.each(dices, ((value, index, array) => {
+      let x = (index === 0 || sanitize.descToValue(array[index - 1]) < sanitize.descToValue(value))
       if (x) count += 1
-      return x
     }))
 
     if (count == minOrdered) {

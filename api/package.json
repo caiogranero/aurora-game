@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
-    "dev": "cd src && nodemon index.js",
+    "dev": "cd src && ../node_modules/nodemon/bin/nodemon.js index.js",
     "build": "gulp",
+    "run test": "./node_modules/mocha/bin/mocha",
     "clean": "gulp clean"
   },
   "dependencies": {
@@ -19,8 +20,14 @@
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "nodemon": "^1.12.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1"
+  }
 }
