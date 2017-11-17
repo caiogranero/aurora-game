@@ -36,7 +36,9 @@ export default {
     start () {
       // Only throw a dice if there are minor than five played and a category were selected
       if (this.dices.length < 5 && this.selectedCategory && (Object.keys(this.selectedCategory).length > 0)) {
-        this.$store.commit('throwDice')
+        this.$DicesService.get().then(response => {
+          this.$store.commit('newDice', response.data.results)
+        })
       } else {
         window.flash('Necessário selecionar uma categoria', 'warning')
       }

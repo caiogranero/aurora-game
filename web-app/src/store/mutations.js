@@ -3,11 +3,8 @@ import _ from 'lodash'
 const mutations = {
   // Generate the next value from the dices
   // Simulate a phisical dice game
-  throwDice (state) {
-    const options = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis']
-    const number = Math.floor((Math.random() * 6) + 0)
-    let text = options[number]
-    state.dices.push(text)
+  newDice (state, dice) {
+    state.dices.push(dice)
   },
 
   // Clean all keys variables, sabe as restart the game
