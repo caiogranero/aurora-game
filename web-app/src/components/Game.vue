@@ -28,6 +28,16 @@ export default {
     results () {
       return this.$store.state.results
     }
+  },
+
+  watch: {
+    results () {
+      if (this.results.length > 0) {
+        window.setTimeout(() => {
+          window.scrollTo(0, document.body.offsetHeight)
+        }, 10)
+      }
+    }
   }
 }
 </script>
