@@ -1,9 +1,16 @@
 <template>
   <div id="results">
-    <h4><u>Resultados</u></h4>
+    <h4><u>Principais resultados</u></h4>
     <p id="total-points"><u>Você pontuou</u> <strong>{{userPoints.totalPoints}} pontos</strong> na categoria <strong>{{userPoints.category}}</strong></p>
     <p id="total-points">A <u>pontuação máxima</u> foi de <strong>{{maxPoints.totalPoints}} pontos</strong> na categoria <strong>{{maxPoints.category}}</strong></p>
     <p id="total-points"> A <u>pontuação mínima</u> foi de <strong>{{minPoints.totalPoints}} pontos</strong> na categoria <strong>{{minPoints.category}}</strong></p>
+    
+    <br>
+
+    <h4><u>Todos os resultados</u></h4>
+    <div v-for="result in results" :key="result.category">
+      <p id="total-points">A pontuação da <u>categoria</u> <strong>{{result.category}}</strong> foi de <strong>{{result.totalPoints}} pontos</strong></p>
+    </div>
   </div>
 </template>
 
